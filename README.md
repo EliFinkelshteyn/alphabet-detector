@@ -28,3 +28,5 @@ Convenience methods are also provided for some major languages:
 
     ad.is_cyrillic(u"Привет") #True  
     ad.is_latin(u"howdy") #True
+    ad.is_cjk(u"hi") #False
+    ad.is_cjk(u'汉字') #True
