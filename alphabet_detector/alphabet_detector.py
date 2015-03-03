@@ -3,10 +3,14 @@ from collections import defaultdict
 
 
 class AlphabetDetector:
-    def __init__(self):
+    def __init__(self, no_memory=False):
         self.alphabet_letters = defaultdict(dict)
+        self.no_memory = no_memory
 
     def is_in_alphabet(self, uchr, alphabet):
+        if self.no_memory:
+            return self.alphabet_letters[alphabet].setdefault(
+                uchr, alphabet in ud.name(uchr))
         try: 
             return self.alphabet_letters[alphabet][uchr]
         except KeyError:
