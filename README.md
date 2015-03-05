@@ -39,3 +39,6 @@ Convenience methods are also provided for some major languages:
     ad.is_latin(u"howdy") #True
     ad.is_cjk(u"hi") #False
     ad.is_cjk(u'汉字') #True
+
+
+**NOTE: all strings are expected to be unicode (utf-8) to keep things consistent. Conversion is *never* done for you, and errors are thrown when a string is not unicode.**
