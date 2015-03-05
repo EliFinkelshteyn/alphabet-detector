@@ -9,7 +9,7 @@ class AlphabetDetector:
 
     def is_in_alphabet(self, uchr, alphabet):
         if self.no_memory:
-            return alphabet in ud.name(uchr)
+            return not uchr.isalpha() or alphabet in ud.name(uchr)
         try: 
             return self.alphabet_letters[alphabet][uchr]
         except KeyError:
@@ -19,6 +19,10 @@ class AlphabetDetector:
     def only_alphabet_chars(self, unistr, alphabet):
         return all(self.is_in_alphabet(uchr, alphabet)
                    for uchr in unistr if uchr.isalpha())
+
+    def detect_alphabet(self, unistr):
+        return set(ud.name(char).split(' ')[0]
+                   for char in unistr if char.isalpha())
 
     def is_greek(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'GREEK') else False
