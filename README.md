@@ -8,11 +8,15 @@ Eli Finkelshteyn (founder [constructor.io](http://www.constructor.io))
 <code>pip install alphabet-detector</code>  
 
 ## Usage
-In general, you can just use the only_alphabet_chars(unicode_str, alphabet) method and expect a boolean response:
+To instantiate an AlphabetDetector (the object is used for speed optimization):
 
 
     from alphabet_detector import AlphabetDetector
     ad = AlphabetDetector()
+
+In general, you can just use the only_alphabet_chars(unicode_str, alphabet) method and expect a boolean response:
+
+
     ad.only_alphabet_chars(u"ελληνικά means greek", "LATIN") #False
     ad.only_alphabet_chars(u"ελληνικά", "GREEK") #True
     ad.only_alphabet_chars(u'سماوي يدور', 'ARABIC')
@@ -22,6 +26,11 @@ In general, you can just use the only_alphabet_chars(unicode_str, alphabet) meth
     ad.only_alphabet_chars(u"det forårsaker første", "LATIN") #True
     ad.only_alphabet_chars(u"Cyrillic and кириллический", "LATIN") #False
     ad.only_alphabet_chars(u"кириллический", "CYRILLIC") #True
+
+You can also request free-style detection of any unicode string:
+
+
+    ad.detect_alphabet(u'Cyrillic and кириллический') #{'CYRILLIC', 'LATIN'}
 
 Convenience methods are also provided for some major languages:
 
