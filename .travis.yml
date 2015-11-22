@@ -9,6 +9,6 @@ python:
   - "3.5-dev" # 3.5 development branch
   - "nightly" # currently points to 3.6-dev
 # install requirements
-pip install pytest-pep8
+install: "pip install pytest-pep8"
 # command to run tests
 script: "py.test --pep8"
