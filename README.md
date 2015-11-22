@@ -1,7 +1,8 @@
 # alphabet-detector
-A library to detect what alphabet something is written in.
-
 [![Build Status](https://travis-ci.org/EliFinkelshteyn/alphabet-detector.svg?branch=master)](https://travis-ci.org/EliFinkelshteyn/alphabet-detector)
+[![Coverage Status](https://coveralls.io/repos/EliFinkelshteyn/alphabet-detector/badge.svg?branch=master&service=github)](https://coveralls.io/github/EliFinkelshteyn/alphabet-detector?branch=master)
+
+A library to detect what alphabet something is written in.
 
 ## Author
 Eli Finkelshteyn (founder [constructor.io](http://www.constructor.io))
