@@ -6,6 +6,7 @@ python:
   - "3.5"
   - "3.5-dev" # 3.5 development branch
 # install requirements
-install: "pip install pytest-pep8"
+install: "pip install pytest-pep8 pytest-cov coveralls python-coveralls"
 # command to run tests
-script: "py.test --pep8"
+script: "py.test --pep8 --cov alphabet_detector --cov-report term-missing"
+after_success: coveralls

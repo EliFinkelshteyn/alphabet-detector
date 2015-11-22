@@ -8,11 +8,22 @@ def ad():
     return AlphabetDetector()
 
 
+@pytest.fixture
+def ad_no_mem():
+    return AlphabetDetector(no_memory=True)
+
+
 class TestAlphabetDetector:
-    def test_is_in_alphabet(self, ad):
+    def test_is_in_alphabet(self, ad, ad_no_mem):
         assert ad.is_in_alphabet(u"a", "LATIN")
         assert not ad.is_in_alphabet(u"λ", "LATIN")
         assert not ad.is_in_alphabet(u"?", "LATIN")
+        assert ad.alphabet_letters == {'LATIN': {u"?": False, u"a": True,
+                                                 u"λ": False}}
+        assert ad_no_mem.is_in_alphabet(u"a", "LATIN")
+        assert not ad_no_mem.is_in_alphabet(u"λ", "LATIN")
+        assert not ad_no_mem.is_in_alphabet(u"?", "LATIN")
+        assert not ad_no_mem.alphabet_letters
 
     def test_only_alphabet_chars(self, ad):
         assert not ad.only_alphabet_chars(u"ελληνικά means greek", "LATIN")

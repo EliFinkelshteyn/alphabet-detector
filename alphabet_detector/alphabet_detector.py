@@ -9,7 +9,7 @@ class AlphabetDetector:
 
     def is_in_alphabet(self, uchr, alphabet):
         if self.no_memory:
-            return not uchr.isalpha() or alphabet in ud.name(uchr)
+            return alphabet in ud.name(uchr)
         try:
             return self.alphabet_letters[alphabet][uchr]
         except KeyError:
