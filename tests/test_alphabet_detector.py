@@ -27,7 +27,7 @@ class TestAlphabetDetector:
 
     def test_detect_alphabet(self, ad):
         assert ad.detect_alphabet(u"Cyrillic and кириллический") == \
-               {"CYRILLIC", "LATIN"}
+            {"CYRILLIC", "LATIN"}
         assert ad.detect_alphabet(u".%?") == set([])
         assert ad.detect_alphabet(u"hello?") == {"LATIN"}
         assert ad.detect_alphabet(u"кириллический?") == {"CYRILLIC"}
