@@ -10,7 +10,7 @@ class AlphabetDetector:
     def is_in_alphabet(self, uchr, alphabet):
         if self.no_memory:
             return not uchr.isalpha() or alphabet in ud.name(uchr)
-        try: 
+        try:
             return self.alphabet_letters[alphabet][uchr]
         except KeyError:
             return self.alphabet_letters[alphabet].setdefault(
@@ -29,7 +29,7 @@ class AlphabetDetector:
 
     def is_cyrillic(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'CYRILLIC') else False
-    
+
     def is_latin(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'LATIN') else False
 
