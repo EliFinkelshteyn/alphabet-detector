@@ -13,9 +13,10 @@ Eli Finkelshteyn (founder [constructor.io](http://www.constructor.io))
 ## Usage
 To instantiate an AlphabetDetector (the object is used for speed optimization):
 
-
-    from alphabet_detector import AlphabetDetector
-    ad = AlphabetDetector()
+```python
+from alphabet_detector import AlphabetDetector
+ad = AlphabetDetector()
+```
 
 In general, you can just use the only_alphabet_chars(unicode_str, alphabet) method and expect a boolean response:
 
