@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
     name='alphabet-detector',
     packages=['alphabet_detector'],
-    version='0.0.4',
+    version='0.0.5',
     description='A library to detect what alphabet something is written in.',
     author='Eli Finkelshteyn',
     author_email='iefinkel@gmail.com',
