@@ -18,7 +18,7 @@ from alphabet_detector import AlphabetDetector
 ad = AlphabetDetector()
 ```
 
-In general, you can just use the only_alphabet_chars(unicode_str, alphabet) method and expect a boolean response:
+In general, you can just use the `only_alphabet_chars(unicode_str, alphabet)` method and expect a boolean response:
 
 ```python
 ad.only_alphabet_chars(u"ελληνικά means greek", "LATIN") #False
