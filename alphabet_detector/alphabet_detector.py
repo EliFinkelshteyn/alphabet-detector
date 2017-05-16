@@ -40,7 +40,11 @@ class AlphabetDetector:
         return True if self.only_alphabet_chars(unistr, 'HEBREW') else False
 
     def is_cjk(self, unistr):
-        return True if self.only_alphabet_chars(unistr, 'CJK') else False
+        # Hangul is not considered CJK, so we must check for both
+        return True if not set(self.detect_alphabet(unistr)) - {'HANGUL','CJK'} else False
+
+    def is_hangul(self, unistr):
+        return True if self.only_alphabet_chars(unistr, 'HANGUL') else False
 
     def is_thai(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'THAI') else False
