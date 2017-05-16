@@ -4,7 +4,8 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
-  - "3.5-dev" # 3.5 development branch
+  - "3.6"
+  - "3.7-dev" # 3.7 development branch
 # install requirements
 install: "pip install pytest-pep8 pytest-cov coveralls python-coveralls"
 # command to run tests
