@@ -39,13 +39,19 @@ class AlphabetDetector:
     def is_hebrew(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'HEBREW') else False
 
+    # NOTE: this only detects Chinese script characters (Hanzi/Kanji/Hanja).
+    # it does not detect other CJK script characters like Hangul or Katakana
     def is_cjk(self, unistr):
-        # Hangul is not considered CJK, so we must check for both
-        non_cjk_alphas = set(self.detect_alphabet(unistr)) - {'HANGUL', 'CJK'}
-        return True if not non_cjk_alphas else False
+        return True if self.only_alphabet_chars(unistr, 'CJK') else False
 
     def is_hangul(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'HANGUL') else False
+
+    def is_hiragana(self, unistr):
+        return True if self.only_alphabet_chars(unistr, 'HIRAGANA') else False
+
+    def is_katakana(self, unistr):
+        return True if self.only_alphabet_chars(unistr, 'KATAKANA') else False
 
     def is_thai(self, unistr):
         return True if self.only_alphabet_chars(unistr, 'THAI') else False

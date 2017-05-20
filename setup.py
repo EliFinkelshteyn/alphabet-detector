@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
     name='alphabet-detector',
     packages=['alphabet_detector'],
-    version='0.0.6',
+    version='0.0.7',
     description='A library to detect what alphabet something is written in.',
     author='Eli Finkelshteyn',
     author_email='iefinkel@gmail.com',
     url='https://github.com/EliFinkelshteyn/alphabet-detector',
     download_url='https://github.com/EliFinkelshteyn/'
-                 'alphabet-detector/tarball/0.0.6',
+                 'alphabet-detector/tarball/0.0.7',
     keywords=['alphabet', 'charset', 'detect', 'islatin'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

@@ -70,12 +70,20 @@ class TestAlphabetDetector:
 
     def test_is_cjk(self, ad):
         assert ad.is_cjk(u"汉字")
-        # test hangul separately
-        assert ad.is_cjk(u"한글")
-        # and verify a mix of Hangul and Chinese is also CJK
-        assert ad.is_cjk(u"한글汉字")
+        # and verify a mix of Hangul and Chinese is not CJK
+        assert not ad.is_cjk(u"한글汉字")
         assert not ad.is_cjk(u"Привет")
         assert ad.is_cjk(u"?")
+
+    def test_is_hiragana(self, ad):
+        assert ad.is_hiragana(u"ひらがな")
+        assert not ad.is_hiragana(u"カタカナ")
+        assert ad.is_hiragana(u"?")
+
+    def test_is_katakana(self, ad):
+        assert ad.is_katakana(u"カタカナ")
+        assert not ad.is_katakana(u"汉字")
+        assert ad.is_katakana(u"?")
 
     def test_is_hangul(self, ad):
         assert ad.is_hangul(u"한글")

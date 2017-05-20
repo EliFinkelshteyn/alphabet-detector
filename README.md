@@ -43,6 +43,8 @@ Convenience methods are also provided for some major languages:
 ```python
 ad.is_cyrillic(u"Привет") #True  
 ad.is_latin(u"howdy") #True
+# NOTE: this only detects Chinese script characters (Hanzi/Kanji/Hanja).
+# it does not detect other CJK script characters like Hangul or Katakana
 ad.is_cjk(u"hi") #False
 ad.is_cjk(u'汉字') #True
 ```
